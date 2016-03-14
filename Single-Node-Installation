@@ -1,0 +1,198 @@
+# Required Items VirtualBox, Ubuntu dekstop amd64 ISO Image File, JDK 1.7, Hadoop Tar file, Browser, VI Commands Info
+# Install prerequisites and check them
+sudo apt-get update
+# Install JDK
+sudo apt-get install default-jdk
+# Check java version
+java -version
+# Add dedicated hadoop system user account "hduser" under group name # hadoop
+sudo addgroup hadoop
+# Add hduser under hadoop group
+sudo adduser --ingroup hadoop hduser
+# install SSH
+sudo apt-get install ssh
+# check ssh
+which ssh
+which sshd
+# Create and setup SSH Certificates ($HOME = /home/hduser)
+su hduser
+ssh-keygen -t rsa -P ""
+#this command adds the newly created keys to authorized keys, so hadoop can use SSH without prompting for a password
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+# check SSH works
+ssh localhost
+
+# REBOOT the machine to reflect the changes
+# Install hadoop from internet using wget cmd
+wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz
+# Untar tar file, remember untar happens in your home folder /home/hduser/hadoop-2.6.0
+tar xvzf hadoop-2.6.0.tar.gz
+# add hduser to sudo to do move command, to do this login with ubu account 
+su ubu
+# this command run with ubu user account, check left side ubu@ubu-virtualbox
+sudo adduser hduser sudo
+# change or login the user account with hduser to run the move command, check left side to confirm hduser@ubu-virtualbox
+sudo su hduser
+# make a new directory to do move cmd /usr/local/hadoop with sudo cmd
+sudo mkdir /usr/local/hadoop
+# move folder and other items to newly created /usr/local/hadoop,  - this is our hadoop installation folder from now on.
+cd hadoop-2.6.0
+# make sure you are in /home/hduser/hadoop-2.6.0 before running mv command
+cd hadoop-2.6.0
+ls -lt (check and see if you have the list of component folders
+sudo mv * /usr/local/hadoop
+# check /home/hduser/hadoop-2.6.0 is empty to confirm now untar software items were moved to new folder /usr/local/hadoop (by running ls -lt)
+# check to see, if /home/ubu/hadoop-2.6.0 folder is empty. all th subfolder components moved to new location /usr/local/hadoop
+# Give Write Permission to newly created Directory 
+sudo chown -R hduser:hadoop /usr/local/hadoop
+# Setup config files
+update-alternatives --config java
+
+/.bashrc
+/usr/local/hadoop/etc/hadoop/hadoop-env.sh
+/usr/local/hadoop/etc/hadoop/core-site.xml
+/usr/local/hadoop/etc/hadoop/mapred-site.xml.template
+/usr/local/hadoop/etc/hadoop/hdfs-site.xml
+
+# Do the following config file changes with User account "hduser", so pls keep check the login account name on Left side
+# Append following in ~/.bashrc file, 
+#open the vi commands, if you have question to write
+vi ~/.bashrc
+#HADOOP VARIABLES START
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export HADOOP_INSTALL= /usr/local/hadoop
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+export YARN_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
+#HADOOP VARIABLES END
+# run the source command to reflect the change, check by running echo $JAVA_HOME, echo $HADOOP_INSTALL, echo $PATH
+source ~/.bashrc
+#test by running echo cmd
+echo $JAVA_HOME
+echo $HADOOP_INSTALL
+echo $PATH
+javac -version
+which javac
+
+# Open hadoop-env.sh file, sudo prefix is not required, because hduser is already a member in sudoers
+# This required login to be hduser account
+vi /usr/local/hadoop/etc/hadoop/hadoop-env.sh (make sure, your running folder is /home/hduser)
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 (make sure no space between JAVA_HOME=/usr/lib..)
+# Open core-site.xml
+# make dir /app/hadoop/tmp , this is required hadoop startup will overwrite some default settings
+sudo mkdir -p /app/hadoop/tmp
+sudo chown hduser:hadoop /app/hadoop/tmp
+# add following in core-site.xml
+vi /usr/local/hadoop/etc/hadoop/core-site.xml
+<configuration>
+ <property>-
+  <name>hadoop.tmp.dir</name>
+  <value>/app/hadoop/tmp</value>
+  <description>A base for other temporary directories.</description>
+ </property>
+ <property>
+  <name>fs.default.name</name>
+  <value>hdfs://localhost:54310</value>
+  <description>The name of the default file system.  A URI whose
+  scheme and authority determine the FileSystem implementation.  The
+  uri's scheme determines the config property (fs.SCHEME.impl) naming
+  the FileSystem implementation class.  The uri's authority is used to
+  determine the host, port, etc. for a filesystem.</description>
+ </property>
+</configuration>
+
+# Open mapred-site.xml
+# by default folder contains /usr/local/hadoop/etc/hadoop/mapred-site.xml.template file
+# has to be renamed/copied with the name mapred-site.xml
+cp /usr/local/hadoop/etc/hadoop/mapred-site.xml.template /usr/local/hadoop/etc/hadoop/mapred-site.xml
+# VI to mapred-xml
+vi /usr/local/hadoop/etc/hadoop/mapred-site.xml
+# Enter the following in mapred-site.xml
+<configuration>
+ <property>
+  <name>mapred.job.tracker</name>
+  <value>localhost:54311</value>
+  <description>The host and port that the MapReduce job tracker runs
+  at.  If "local", then jobs are run in-process as a single map
+  and reduce task.
+  </description>
+ </property>
+</configuration>
+
+# Changes to hdfs-site.xml
+# Add new directories are required before doing changes in hdfs-site.xml
+sudo mkdir -p /usr/local/hadoop_store/hdfs/namenode
+sudo mkdir -p /usr/local/hadoop_store/hdfs/datanode
+sudo chown -R hduser:hadoop /usr/local/hadoop_store
+vi /usr/local/hadoop/etc/hadoop/hdfs-site.xml
+<configuration>
+ <property>
+  <name>dfs.replication</name>
+  <value>1</value>
+  <description>Default block replication.
+  The actual number of replications can be specified when the file is created.
+  The default is used if replication is not specified in create time.
+  </description>
+ </property>
+ <property>
+   <name>dfs.namenode.name.dir</name>
+   <value>file:/usr/local/hadoop_store/hdfs/namenode</value>
+ </property>
+ <property>
+   <name>dfs.datanode.data.dir</name>
+   <value>file:/usr/local/hadoop_store/hdfs/datanode</value>
+ </property>
+</configuration>
+
+# Format the NEW hadoop filesystem don't do this in RUNNING hadoop file system, change your current directory to the following
+# Check the echo $JAVA_HOME, $HADOOP_INSTALL, $PATH if is empty, restart Ubuntu to reflect changes
+# if you don't see values for above echo, restart ubuntu then make sure you have ubu login to run the above command.
+cd /usr/local/hadoop_store/hdfs/namenode
+# Make sure you have UBU Login
+hadoop namenode -format
+
+# Recommended to restart Ubuntu to reflect config file changes.
+# Starting hadoop
+cd /usr/local/hadoop/sbin
+sudo su hduser
+start-all.sh or start-dfs.sh, start-yarn.sh (Resource Manager)
+# Check to see, if daemon is running
+hduser@laptop:/usr/local/hadoop/sbin$ jps
+# another way to check is netstat
+netstat -plten | grep java
+# stopping hadoop
+cd /usr/local/hadoop/sbin
+stop-dfs.sh or stop-all.sh
+
+# Check web UI NameNode, SecondaryNameNode
+http://localhost:50070/
+http://localhost:50090/
+http://localhost:50090/logs
+
+# Run the mapreducer now, check if you questions https://www.youtube.com/watch?v=N9PLMYcMdUk
+# Make directory /user/hduser to see them in Hadoop UI
+# dir has to be in /usr/local/hadoop for the following 2 commands, this will create folder /user/hduser. check them in UI
+bin/hdfs dfs -mkdir /user
+bin/hdfs dfs -mkdir /user/hduser
+# Create a sample txt file at /home/hduser/input/hdpfile.txt and enter some sample text inside the file "hdpfile.txt"
+# Copy the input text file from /home/hduser/input/hdpfile.txt to new filename #inputfile (without extension, this file is visible in UI, Use put or  copyFromLocal DFS Command to copy the files from /home/hduser/input/hdpfile.txt to HDFS Server Folder, check them using Hadoop UI Location)
+# dir has to be in /usr/local/hadoop for the following 1 command
+bin/hdfs dfs -put /home/hduser/txtfile.txt inputfile
+# command to upload txt file called serverlogs.txt from Dowloads folder to HDFS System
+bin/hdfs dfs -put /home/ubu/Downloads/serverlogs.txt tstlogs
+
+# Check hadoop UI to see the /user/hduser/inputfile in //localhost:50070/explorer.html
+# Run the jar file to see the output file
+# dir has to be in /usr/local/hadoop for the following commands and user account has to be in sudo su hduser
+bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount inputfile outputfile
+or
+bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar wordcount inputfile outputfile
+bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar pi 2 5
+# Command to test my Local JAR File with big text file
+bin/hadoop jar /home/ubu/Downloads/wordCount.jar venkatbigfiletest venkatbigfileo
+bin/hadoop jar /home/ubu/Downloads/wordCount.jar tstlogs tstlogs0
