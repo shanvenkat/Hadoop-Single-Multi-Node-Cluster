@@ -1,0 +1,67 @@
+#####################################################################################################
+Multi Node Cluster HDFS on AWS, EC2, S3, EMR, Cloud Computing.
+#####################################################################################################
+
+change to root user from ec2-user
+https://forums.aws.amazon.com/thread.jspa?threadID=86876
+http://www.cs.rit.edu/~cslab/vi.html#A1.6
+
+EMR 633
+http://docs.aws.amazon.com/cli/latest/reference/emr/ssh.html
+#Open SSH command with EMR Master Node
+aws emr ssh --cluster-id j-3SD91U2E1L2QX --key-pair-file ~/.ssh/mykey.pem
+ssh hadoop@ec2-54-152-91-17.compute-1.amazonaws.com -i 1023pm.pem
+bash /usr/lib/hadoop/bin/hadoop jar /var/lib/aws/emr/step-runner/hadoop-jars/command-runner.jar state-pusher-script
+ssh -i 1023pm.pem hadoop@ec2-54-86-5-147.compute-1.amazonaws.com
+ssh -i 1023pm.pem hadoop@52.23.197.55.compute-1.amazonaws.com 
+ssh -i 1023pm.pem -ND 8157 hadoop@ec2-52-3-30-131.compute-1.amazonaws.com
+https://cloud.google.com/hadoop/running-a-mapreduce-job
+aws ec2 get-console-output --instance-id instance_id
+copy to EC2 (run in the local folder)
+scp -i 1023pm.pem ng.txt ec2-user@ec2-52-1-31-87.compute-1.amazonaws.com:/home/ec2-user
+scp -i 1023pm.pem ng.txt ec2-user@ec2-52-1-31-87.compute-1.amazonaws.com:~/.
+
+#To login to AWS EC2, please follow this
+cd /Users/venkatesanshanmugam/Downloads
+chmod 400 /Users/venkatesanshanmugam/Downloads/my-key-pair.pem
+ssh -i 1023pm.pem ec2-user@ec2-54-86-91-203.compute-1.amazonaws.com (cd Downloads..)
+ssh -i 1023pm.pem root@ec2-54-86-91-203.compute-1.amazonaws.com
+# following command ran from India to ap-singapore region server
+ssh -i kpair.pem ec2-user@ec2-54-179-165-59.ap-southeast-1.compute.amazonaws.com
+aws ec2 describe-instance-status --instance-id i-5203422c
+
+# start/stop EC2
+ec2-start-instances i-511990b8 -O AKIAJEUXT5FFPPPMXFRA -W UdAnWFbZv/bwBCYx1bs6/56VpezFZUYEB6Ogwxsu
+ec2-stop-instances i-511990b8 -O AKIAJEUXT5FFPPPMXFRA -W UdAnWFbZv/bwBCYx1bs6/56VpezFZUYEB6Ogwxsu
+
+aws ec2 get-console-output --instance-id i-511990b8
+ec2-version
+ec2-reboot-instances i-511990b8 -O AKIAJEUXT5FFPPPMXFRA -W UdAnWFbZv/bwBCYx1bs6/56VpezFZUYEB6Ogwxsu
+s3://aws-logs-278696327220-us-east-1/elasticmapreduce/
+
+# Launch EC2 Instance using AWS CLI Commands, Run the following with user account # ubu, because AWS CLI installed with ubu account
+http://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html
+# Amazon Machine Image # ami-52978200 used for run instance in CLI Commands
+aws ec2 run-instances --image-id ami-52978200 --count 1 --instance-type t2.micro --key-name devenv-key --security-groups devenv-sg --query 'Instances[0].InstanceId'
+# Command to run SSH command to talk to EC2 Instances
+ssh -i devenv-key.pem ec2-user@54.179.144.193
+
+# This CLI Command works man. this CLI is for default Python wordCount Program
+aws emr create-cluster --enable-debugging --log-uri s3://testsv/logs --steps Type=STREAMING,Name='Streaming Program',ActionOnFailure=CONTINUE,Args=[-files,s3://elasticmapreduce/samples/wordcount/wordSplitter.py,-mapper,wordSplitter.py,-reducer,aggregate,-input,s3://elasticmapreduce/samples/wordcount/input,-output,s3://testsv/output] --release-label emr-4.0.0 --service-role EMR_DefaultRole --ec2-attributes KeyName=devenv-key,InstanceProfile=EMR_EC2_DefaultRole --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate
+
+# Custom jar using AWS CLI Syntax
+aws emr create-cluster --name "Test cluster" --ami-version 3.9 --applications Name=Hue Name=Hive Name=Pig --use-default-roles --ec2-attributes KeyName=myKey --instance-type m3.xlarge --instance-count 3 --steps Type=CUSTOM_JAR,Name="Custom JAR Step",ActionOnFailure=CONTINUE,Jar=pathtojarfile, Args=["pathtoinputdata","pathtooutputbucket","arg1","arg2"]
+
+aws emr create-cluster --name "Test cluster" --service-role EMR_DefaultRole --ec2-attributes InstanceProfile=EMR_EC2_DefaultRole --ami-version 3.9 --applications Name=Hue Name=Hive Name=Pig --use-default-roles --ec2-attributes KeyName=devenv-key.pem --instance-type m3.xlarge --instance-count 3 --steps Type=CUSTOM_JAR,Name="Custom JAR Step",ActionOnFailure=CONTINUE,Jar=s3://testsv/jobs/wordCount.jar, Args=["s3://testsv/input","s3://testsv/output","arg1","arg2"]
+
+# Without service role & InstanceProfile
+aws emr create-cluster --name "Test cluster Venkat" --ami-version 3.9 --applications Name=Hue Name=Hive Name=Pig --use-default-roles --ec2-attributes KeyName=devenv-key.pem --instance-type m3.xlarge --instance-count 3 --steps Type=CUSTOM_JAR,Name="Custom JAR Step",ActionOnFailure=CONTINUE,Jar=s3://testsv/jobs/wordCount.jar,Args=[s3://testsv/input/,s3://testsv/output,arg1,arg2]
+
+# Without service role & InstanceProfile, Corrected key name, Removed Action on Failure, Added auto terminate, Added Log URI
+##This CLI Command works for Custom JAR wahooo... Jar=wordCount.jar, Input=s3://testsv/venkat, Output=s3://testsv/408PM, Logs=s3://testsv/logs/
+
+aws emr create-cluster --name "Custom Jar smallfile" --region ap-southeast-1 --enable-debugging --log-uri s3://testsv/logs --release-label emr-4.0.0 --use-default-roles --ec2-attributes KeyName=devenv-key --instance-type m3.xlarge --instance-count 3 --auto-terminate --steps Type=CUSTOM_JAR,Name="Custom JAR Step smallfile",Jar=s3://testsv/jobs/wordCount.jar,Args=[s3://testsv/smallfile,s3://testsv/smallfile-out]
+
+# Access Key and Secret Key mismatch, run the folowing aws commands
+aws ec2 describe-instances -- will help to find the Authentication Failure
+aws configure list
