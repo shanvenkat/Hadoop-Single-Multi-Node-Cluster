@@ -1,0 +1,24 @@
+https://docs.docker.com/engine/tutorials/dockerimages/
+
+A great nation is any mob of people, which proudce at least one honest human a century
+uname -r (linux kernel should be more than 3.11 to run Docker Engine)
+docker version (docker version)
+docker images - show all images
+docker ps - show running containers on the system
+docker ps -a show all containers on the system
+docker ps -l return the details of last container
+cat Dockerfile ( read Dockerfile)
+docker build -t docker-whale (build a image using new Dockerfile in current Directory with new name docker-whale)
+docker images (run current images)
+docker stop ID (container name or ID)
+docker start ID , ''
+docker attach ID -- attach container
+docker logs ID/name - logs
+docker exec -t container ID
+docker build -t mynodejs:v1 . (Build new image use Dockerfile, don't forget space and period for pointing current Dockerfile)
+docker run -t -i ouruser/sinatra:v2 /bin/bash
+docker run -t -i ubuntu:14.04 /bin/bash (pulls ubuntu image and interactive with new container)
+docker rmi -f 7d9495d03763 (Remove docker image either with ID or Name)
+docker --version (docker version)
+docker run hello-world
+docker run -t -i ubuntu /bin/bash
