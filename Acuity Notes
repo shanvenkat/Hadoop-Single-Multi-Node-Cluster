@@ -1,0 +1,286 @@
+ [ { "id": "304466804484872" ,"t" : "GOOG" ,"e" : "NASDAQ" ,"l" : "799.07" ,"l_fix" : "799.07" ,"l_cur" : "799.07" ,"s": "2" ,"ltt":"4:00PM EDT" ,"lt" : "Oct 26, 4:00PM EDT" ,"lt_dts" : "2016-10-26T16:00:01Z" ,"c" : "-8.60" ,"c_fix" : "-8.60" ,"cp" : "-1.06" ,"cp_fix" : "-1.06" ,"ccol" : "chr" ,"pcls_fix" : "807.67" ,"el": "799.07" ,"el_fix": "799.07" ,"el_cur": "799.07" ,"elt" : "Oct 26, 6:24PM EDT" ,"ec" : "0.00" ,"ec_fix" : "0.00" ,"ecp" : "0.00" ,"ecp_fix" : "0.00" ,"eccol" : "chb" ,"div" : "" ,"yld" : "" } ]
+
+
+response:
+// [
+{
+"id": "304466804484872"
+,"t" : "GOOG"
+,"e" : "NASDAQ"
+,"l" : "799.07"
+,"l_fix" : "799.07"
+,"l_cur" : "799.07"
+,"s": "2"
+,"ltt":"4:00PM EDT"
+,"lt" : "Oct 26, 4:00PM EDT"
+,"lt_dts" : "2016-10-26T16:00:01Z"
+,"c" : "-8.60"
+,"c_fix" : "-8.60"
+,"cp" : "-1.06"
+,"cp_fix" : "-1.06"
+,"ccol" : "chr"
+,"pcls_fix" : "807.67"
+,"el": "800.99"
+,"el_fix": "800.99"
+,"el_cur": "800.99"
+,"elt" : "Oct 26, 7:01PM EDT"
+,"ec" : "+1.92"
+,"ec_fix" : "1.92"
+,"ecp" : "0.24"
+,"ecp_fix" : "0.24"
+,"eccol" : "chg"
+,"div" : ""
+,"yld" : ""
+}
+]
+
+
+Access Code: Gf6!MA9n
+Gf6!MA9n
+
+http://finance.google.com/finance/info?client=ig&q=nasdaq:aapl
+http://query.yahooapis.com/v1/public/yql?q=("GOOG","AAPL")&format=json&env=store://datatables.org/alltableswithkeys
+
+file:///D:/GSA/IAE_www_code/_presentation/grunt/vendor/GSA-IAE/iae-modules/docs/api/index.html
+http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=52.203.16.25&project=SAM+Prototype&evt=4001&uid=TEST_Public_User&pwd=Publictest!!123
+&Port=0&evt=4001&src=mstrWeb.4001&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
+
+http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=52.203.16.25&project=SAM+Prototype&evt=4001&uid=TEST_Public_User&Port=0&evt=4001&src=mstrWeb.4001&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
+
+https://csp-api.sam.gov/comp/IdentityandAccess/v3/auth/session/?api_key=rkkGBk7AU8UQs9LHT6rM0rFkg3A3rGaiBntKSGEC&iPlanetDirectoryPro=AQIC5wM2LY4SfcwGGhwYvoeV-03ggp0lqgpGrNJjq849TZU.*AAJTSQACMDEAAlNLABM1NDc3NjQxODc2NjYzMTg2ODMyAAJTMQAA*
+
+https://csp-api.sam.gov/comp/IdentityandAccess/auth/sfa/session/?username=TEST_Public_User&password=zjSYgBFLuZ,6XEeT
+https://csp-api.sam.gov/comp/IdentityandAccess/v3/auth/session/?api_key=rkkGBk7AU8UQs9LHT6rM0rFkg3A3rGaiBntKSGEC
+git@github.com:shanvenkat/IAE_www_code.git
+
+{
+  "sessionToken" : {
+    "uid" : "TEST_NASA_User",
+    "tokenId" : "AQIC5wM2LY4SfcwUZj91C-6W25w9aFRbgWAmfJ5jU34dDEc.*AAJTSQACMDEAAlNLABMyMDg4NTg5OTMyODAxMzk3NzI2AAJTMQAA*",
+    "cn" : "TEST_NASA_User",
+    "sn" : "TEST_NASA_User",
+    "mail" : "vshanmugam@acuitys.com",
+    "department" : 100011942,
+    "orgID" : 100000266
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://iam.comp.micropaas.io:80/auth/v3/session"
+    }
+  }
+}
+
+https://csp-github.sam.gov/GSA-IAE/iae-widgets
+https://www.youtube.com/watch?v=hvWq5HNvQYk&list=PLtK75qxsQaMLwF_uCB_CK8wIE17D-afuJ&index=2
+https://community.microstrategy.com/t5/Object-Development/Microstrategy-Web-on-Apache-Tomcat-Server/td-p/78842
+Apache tomcat Administrator password for Micrcostrategy custom installation
+http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb
+http://54.197.196.14:8080/MicroStrategy/servlet/mstrWebAdmin
+http://54.197.196.14:8080/MicroStrategy/servlet/taskAdmin
+34952
+DESKTOP-L42S8US
+10.11.34.63
+http://lw.microstrategy.com/msdz/MSDL/10/docs/projects/WebSDK/Content/topics/other/Debugging_Java_Code_used_in_a_J2EE_Environment.htm
+https://www.cs.colostate.edu/helpdocs/vi.html
+vi commands
+
+https://www.youtube.com/watch?v=TSpXn1rWlM8
+sudo usermod -s -G vboxsf ubu - to add user # ubu to vboxsf group
+groups ubu - list all groups
+
+http://gsaiae.confluence.micropaas.io:8090/display/ALL/Available+Environment+variables+for+services
+local plugin location #C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\MicroStrategy\plugins
+
+https://lw.microstrategy.com/msdz/msdl/902/docs/ReferenceFiles/tasks/default.htm
+https://lw.microstrategy.com/msdz/msdl/902/docs/DeveloperLibrary.htm#topics/taskinfr/TI_Overview_TaskAdmin.htm
+http://54.197.196.14:8080/MicroStrategy/servlet/taskAdmin?pg=builder#
+https://lw.microstrategy.com/msdz/msdl/902/docs/ReferenceFiles/constant-values.html#com.microstrategy.webapi.EnumDSSXMLAuthModes.DssXmlAuthAnonymous
+
+FROM node:argon
+
+# 
+Create app directory
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# 
+Install app dependencies
+
+COPY index.html /usr/src/app/
+
+COPY _node /usr/src/app/_node
+
+COPY css /usr/src/app/css
+
+COPY img /usr/src/app/img
+
+COPY js /usr/src/app/js
+
+COPY views /usr/src/app/views
+
+RUN npm install
+
+
+EXPOSE 8080
+
+CMD [ "npm", "start" ]
+
+
+https://github.com/Dholmblad/MicroStrategySDKTV
+http://khaidoan.wikidot.com/microstrategy-sdk-custom-esm
+https://lw.microstrategy.com/msdz/MSDL/_CurrentGARelease/docs/projects/WebSDK/Content/topics/scenarios/WEBSDK006.htm
+https://lw.microstrategy.com/msdz/MSDL/_CurrentGARelease/docs/projects/WebSDK/default.htm#topics/other/Overview_of_SDK_Customization_Tools.htm
+https://lw.microstrategy.com/msdz/msdl/920/docs/mergedprojects/websdk/topics/taskinfr/TI_JavaBasedTask_Code_UsingWebObjects.htm
+https://lw.microstrategy.com/msdz/MSDL/10/docs/WebAPI_doclava/reference/com/microstrategy/web/tasks/TaskRequestContext.html
+
+## Putty login AWS Terminal Bash Commands
+## To find OS
+uname -p (os bit version ex. 64 bit)
+uname -m (OS bit version ex. 64 bit)
+uname -r (kernal version)
+uname (OS Type)
+java -version
+java -fullversion
+
+######### CSP Git Bash Commands ##############
+## Open Git Bash Terminal
+## Create Regular Service (first Create Deployment Service before Regular Service) from CSP and go to GitHub URL and copy the clipboard and use it for your Git Clone command in GitBash Terminal. Sample URL below.. 
+https://csp-github.sam.gov/GSA-IAE/core-srvc.git
+
+# Use following key instead of password
+https://csp-github.sam.gov/settings/tokens
+1659d9d0c180a68252fcbe8b6fa68792fa27f0ba
+
+## Run the Git Bash Command to open up the command prompt, go to D: folder (where I am running the cloning to create a folder locally in d:)
+## Copy the URL from the GitHub to pass in the clone command
+## Git clone command, creates a folder from GitHUb to Local cloning folder from GitHub to Local and then UID/Keys
+cd d:\GitHub Migration, prompt would be d:\GitHub Migration\
+git clone https://csp-github.sam.gov/GSA-IAE/ui-portal-01.git
+
+## Change GitHub Branch (switching to comp branch from default master branch one, go to newly created cloned folder and then run following cmd)
+cd to newly cloned folder
+git checkout comp (wait...!, Have you done? cd..to cloned folder ?)
+
+## Notes - Now do copy your Project files to this newly Cloned local folder
+then run the git add command
+## Git add all stuff dir, subdir, files etc (Add, Commit and Push)
+git add --all
+git commit -m "<message>"
+# push requires uid/keys
+git push
+
+## go to Git URL and check the transfers now, Add the Dockerfile at the root level 
+Dockerfile 
+FROM node:argon
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+# Install app dependencies
+COPY index.html /usr/src/app/
+COPY package.json /usr/src/app/
+COPY app.js /usr/src/app/
+COPY bin /usr/src/app/bin
+COPY css /usr/src/app/css
+COPY img /usr/src/app/img
+COPY js /usr/src/app/js
+COPY node_modules /usr/src/app/node_modules
+COPY public /usr/src/app/public
+COPY routes /usr/src/app/routes
+COPY views /usr/src/app/views
+RUN npm install
+
+EXPOSE 8080
+CMD [ "npm", "start" ]
+
+## go to deploy service git URL, follow Docker Compose Deploy Code no
+## Git command to disable SSL Verification
+## Open Git Bash and run the command if you want to completely disable SSL verification.
+git config --global http.sslVerify false
+## Run the Git Bash as Administrator to execute the Code Push Process, Git Bash Utility to do Code Push Process
+** Run as Adminstrator *
+## Download Git at the following location, 
+https://git-scm.com/download/win
+######### CSP Git Bash Commands ##############
+
+https://community.microstrategy.com/t5/Tech-Corner/New-in-10-4-native-JSON-data-support-through-RESTful-APIs/ba-p/301774
+https://lw.microstrategy.com/msdz/MSDL/931/docs/mergedProjects/webservicessdk/topics/Introduction_to_the_Web_Services_SDK.htm
+https://lw.microstrategy.com/msdz/MSDL/931/docs/DeveloperLibrary.htm#mergedProjects/webservicessdk/topics/Introduction_to_the_Web_Services_SDK.htm
+
+Universal ID:
+id=venkatesanshanmugam,ou=user,dc=config,dc=csp,dc=gsa,dc=gov
+
+Custom SSO login with Mstr
+https://lw.microstrategy.com/msdz/msdl/901/docs/SSO_SSOSample_ESMCodeExpl.htm
+
+https://jwt.io/
+https://github.com/auth0-samples/auth0-javascript-spa/tree/master/00-Starter-Seed
+https://github.com/Dholmblad/MicroStrategySDKTV
+https://github.com/mstr-dev/Visualization-Plugins
+https://blog.brunoscopelliti.com/deal-with-users-authentication-in-an-angularjs-web-app/
+https://medium.com/@mattlanham/authentication-with-angularjs-4e927af3a15f#.ilaa2phn1
+https://medium.com/opinionated-angularjs/techniques-for-authentication-in-angularjs-applications-7bbf0346acec#.25k6rurjt
+https://github.com/stormpath/express-stormpath
+https://stormpath.com/blog/jwt-authentication-angularjs
+
+71.163.46.167 -- Home IP
+file:///D:/GSA/IAE_www_code/_presentation/grunt/vendor/GSA-IAE/iae-modules/docs/api/index.html
+
+https://github.com/GSA/sam-web-design-standards/wiki/Syntax-highlighting
+https://www.railstutorial.org/book/beginning#cha-beginning
+
+http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=52.203.16.25&project=SAM+Prototype&evt=4001&uid=TEST_Public_User&pwd=Publictest!!123
+&Port=0&evt=4001&src=mstrWeb.4001&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
+admin/n0pass
+
+http://10.11.34.63:8080/MicroStrategy/servlet/mstrWeb?Server=10.11.34.63&Project=SAM+Prototype&Port=0&evt=3010&uid=TEST_Public_User&pwd=Publictest!!123&src=mstrWeb.3010&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
+
+Canon iR-ADV C5235/5240 Class Driver
+192.168.6.25
+
+TEST_NASA_User
+100011942
+vshanmugam@acuitys.com
+100000266
+
+WTS Test users
+DOD
+username: TEST_DOD_User 
+password: Hur4BmjPu6mv+cXK
+kavita.puvenna@reisystems.com
+
+https://csp-api.sam.gov/comp/IdentityandAccess/v3/auth/session/?api_key=rkkGBk7AU8UQs9LHT6rM0rFkg3A3rGaiBntKSGEC
+ "tokenId" : 
+AQIC5wM2LY4SfcwUZj91C-6W25w9aFRbgWAmfJ5jU34dDEc.*AAJTSQACMDEAAlNLABMyMDg4NTg5OTMyODAxMzk3NzI2AAJTMQAA*
+
+NASA
+username: TEST_NASA_User
+password: n9zrd7uW*aSC35JE
+vshanmugam@acuitys.com
+
+<iframe name="viewport" ng-src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC" class="no-frame" height="500" src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC"></iframe>
+
+TICKET NUMBER:INC1722792
+DATE OPENED: 2016-10-26 12:45:10 PM EDT
+DESCRIPTION: CSP portal
+
+NASA Headquarters
+username: TEST_Public_User
+password: zjSYgBFLuZ,6XEeT
+Melissa.Hughes@gsa.gov
+
+TEST_Sys_Admin
+G$A##test123
+
+BSP MSTR Iserver/10.11.34.63
+BSP MSTR Web/10.11.34.63:8080
+AWS 54.197.196.14
+AWS MSTR Web/54.197.196.14:8080
+MSTR IServer/52.203.16.25
+SVN/https://acuityvm04.acuitys.com:6443/svn/IAE-FPDS
+OWA/https://mail.acuitys.com/owa
+CSP/venkatesanshanmugam/P@
+BT/VenkatesanShanmugam/*FE*
+https://beta.fpdsng.com/common/jsp/FPDS.jsp/acuity email/*
+Unanet/vshanmugam/*
+MSTR Knowledge Base/acuity email / &
