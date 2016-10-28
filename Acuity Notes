@@ -1,51 +1,21 @@
- [ { "id": "304466804484872" ,"t" : "GOOG" ,"e" : "NASDAQ" ,"l" : "799.07" ,"l_fix" : "799.07" ,"l_cur" : "799.07" ,"s": "2" ,"ltt":"4:00PM EDT" ,"lt" : "Oct 26, 4:00PM EDT" ,"lt_dts" : "2016-10-26T16:00:01Z" ,"c" : "-8.60" ,"c_fix" : "-8.60" ,"cp" : "-1.06" ,"cp_fix" : "-1.06" ,"ccol" : "chr" ,"pcls_fix" : "807.67" ,"el": "799.07" ,"el_fix": "799.07" ,"el_cur": "799.07" ,"elt" : "Oct 26, 6:24PM EDT" ,"ec" : "0.00" ,"ec_fix" : "0.00" ,"ecp" : "0.00" ,"ecp_fix" : "0.00" ,"eccol" : "chb" ,"div" : "" ,"yld" : "" } ]
-
-
-response:
-// [
-{
-"id": "304466804484872"
-,"t" : "GOOG"
-,"e" : "NASDAQ"
-,"l" : "799.07"
-,"l_fix" : "799.07"
-,"l_cur" : "799.07"
-,"s": "2"
-,"ltt":"4:00PM EDT"
-,"lt" : "Oct 26, 4:00PM EDT"
-,"lt_dts" : "2016-10-26T16:00:01Z"
-,"c" : "-8.60"
-,"c_fix" : "-8.60"
-,"cp" : "-1.06"
-,"cp_fix" : "-1.06"
-,"ccol" : "chr"
-,"pcls_fix" : "807.67"
-,"el": "800.99"
-,"el_fix": "800.99"
-,"el_cur": "800.99"
-,"elt" : "Oct 26, 7:01PM EDT"
-,"ec" : "+1.92"
-,"ec_fix" : "1.92"
-,"ecp" : "0.24"
-,"ecp_fix" : "0.24"
-,"eccol" : "chg"
-,"div" : ""
-,"yld" : ""
-}
-]
-
+com.docker.swarm.reschedule-policies=["on-node-failure”]
 
 Access Code: Gf6!MA9n
 Gf6!MA9n
 
-http://finance.google.com/finance/info?client=ig&q=nasdaq:aapl
+http://finance.google.com/finance/info?client=ig&q=aapl,goog
 http://query.yahooapis.com/v1/public/yql?q=("GOOG","AAPL")&format=json&env=store://datatables.org/alltableswithkeys
 
 file:///D:/GSA/IAE_www_code/_presentation/grunt/vendor/GSA-IAE/iae-modules/docs/api/index.html
+
+http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=52.203.16.25&project=SAM+Prototype&evt=4001&uid=TEST_DOD_User&pwd=DOD
+&Port=0&evt=4001&src=mstrWeb.4001&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
+
 http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=52.203.16.25&project=SAM+Prototype&evt=4001&uid=TEST_Public_User&pwd=Publictest!!123
 &Port=0&evt=4001&src=mstrWeb.4001&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
 
-http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=52.203.16.25&project=SAM+Prototype&evt=4001&uid=TEST_Public_User&Port=0&evt=4001&src=mstrWeb.4001&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
+http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=52.203.16.25&project=SAM+Prototype&evt=4001&uid=TEST_NASA_User&pwd=NASA
+&Port=0&evt=4001&src=mstrWeb.4001&reportID=DDDE38ED469F690E030715A1C1F06F01&reportSubtype=768&visMode=0&reportViewMode=1
 
 https://csp-api.sam.gov/comp/IdentityandAccess/v3/auth/session/?api_key=rkkGBk7AU8UQs9LHT6rM0rFkg3A3rGaiBntKSGEC&iPlanetDirectoryPro=AQIC5wM2LY4SfcwGGhwYvoeV-03ggp0lqgpGrNJjq849TZU.*AAJTSQACMDEAAlNLABM1NDc3NjQxODc2NjYzMTg2ODMyAAJTMQAA*
 
@@ -243,26 +213,20 @@ TEST_NASA_User
 vshanmugam@acuitys.com
 100000266
 
+https://csp-api.sam.gov/comp/IdentityandAccess/v3/auth/session/?api_key=rkkGBk7AU8UQs9LHT6rM0rFkg3A3rGaiBntKSGEC
+ "tokenId" : 
+AQIC5wM2LY4SfcwUZj91C-6W25w9aFRbgWAmfJ5jU34dDEc.*AAJTSQACMDEAAlNLABMyMDg4NTg5OTMyODAxMzk3NzI2AAJTMQAA*
+
 WTS Test users
 DOD
 username: TEST_DOD_User 
 password: Hur4BmjPu6mv+cXK
 kavita.puvenna@reisystems.com
 
-https://csp-api.sam.gov/comp/IdentityandAccess/v3/auth/session/?api_key=rkkGBk7AU8UQs9LHT6rM0rFkg3A3rGaiBntKSGEC
- "tokenId" : 
-AQIC5wM2LY4SfcwUZj91C-6W25w9aFRbgWAmfJ5jU34dDEc.*AAJTSQACMDEAAlNLABMyMDg4NTg5OTMyODAxMzk3NzI2AAJTMQAA*
-
 NASA
 username: TEST_NASA_User
 password: n9zrd7uW*aSC35JE
 vshanmugam@acuitys.com
-
-<iframe name="viewport" ng-src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC" class="no-frame" height="500" src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC"></iframe>
-
-TICKET NUMBER:INC1722792
-DATE OPENED: 2016-10-26 12:45:10 PM EDT
-DESCRIPTION: CSP portal
 
 NASA Headquarters
 username: TEST_Public_User
@@ -271,6 +235,14 @@ Melissa.Hughes@gsa.gov
 
 TEST_Sys_Admin
 G$A##test123
+
+<iframe name="viewport" ng-src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC" class="no-frame" height="500" src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC"></iframe>
+
+TICKET NUMBER:INC1722792
+DATE OPENED: 2016-10-26 12:45:10 PM EDT
+DESCRIPTION: CSP portal
+
+
 
 BSP MSTR Iserver/10.11.34.63
 BSP MSTR Web/10.11.34.63:8080
