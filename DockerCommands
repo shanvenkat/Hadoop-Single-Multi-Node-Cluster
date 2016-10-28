@@ -23,6 +23,16 @@ docker rmi -f ID or Name ID or Name (Remove docker image either with ID or Name)
 docker rm -f containerID or Name Container ID or Name
 docker --version (docker version)
 docker run hello-world
-docker run -t -i ubuntu /bin/bash
+docker run -t -i ubuntu /bin/bash (run the ubuntu container and run the /bin/bash command, so if local image is not there, RUN cmd will get from docker Hub)
 docker commit -m "creation of new image" -a "venkat shanmugam" suspicious_almeida venkat/sinatra:v2 (create new image from existing container, -m commit message, -a author name, container name, image name with version#)
 docker run -t -i venkat/sinatra:v2 /bin/bash (run the newly created image)
+docker network ls (list the networks on your machine)
+docker network inspect my-bridge-network (inspect the newly created my-bridge-network)
+docker run -d --network=my-bridge-network --name db training/postgres (running the container, specifying the network)
+docker run -d --name web training/webapp python app.py (start running the web application, not specifying network)
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' web (get the IP Address of your web)
+docker exec -it db bash (Open a Shell to your running db container, run ping command (ping IP or ping container name) inside the shell connected to container)
+docker network disconnect bridge networktest (remove a container from network by disconnecting the container, you supply both network name and container name or ID)
+docker network create -d bridge my-bridge-network (create your own bridge network)
+docker network connect my-bridge-network web (attach running web app container to my-bridge-network)
+docker network inspect bridge (Inspect the network is an easy way to find out the container's IP Address)
