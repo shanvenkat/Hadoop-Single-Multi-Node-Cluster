@@ -58,6 +58,9 @@ update-alternatives --config java
 # Append following in ~/.bashrc file, 
 #open the vi commands, if you have question to write
 vi ~/.bashrc
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 (for latest)
+
 #HADOOP VARIABLES START
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 export HADOOP_INSTALL= /usr/local/hadoop
@@ -82,7 +85,7 @@ which javac
 # Open hadoop-env.sh file, sudo prefix is not required, because hduser is already a member in sudoers
 # This required login to be hduser account
 vi /usr/local/hadoop/etc/hadoop/hadoop-env.sh (make sure, your running folder is /home/hduser)
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 (make sure no space between JAVA_HOME=/usr/lib..)
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 (make sure no space between JAVA_HOME=/usr/lib.., JRE version JAVA 8)
 # Open core-site.xml
 # make dir /app/hadoop/tmp , this is required hadoop startup will overwrite some default settings
 sudo mkdir -p /app/hadoop/tmp
