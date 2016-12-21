@@ -1,0 +1,22 @@
+FROM node:argon
+## Create app directory
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+## Install app dependencies
+##RUN git clone https://github.com/shanvenkat/HobsonsTest.git
+##RUN npm install
+
+COPY ./hobsonstest/bin /usr/src/app/bin
+COPY ./hobsonstest/node_modules /usr/src/app/node_modules
+COPY ./hobsonstest/public /usr/src/app/public
+COPY ./hobsonstest/routes /usr/src/app/routes
+COPY ./hobsonstest/views /usr/src/app/views
+COPY ./hobsonstest/app.js /usr/src/app/app.js
+COPY ./hobsonstest/package.json /usr/src/app/package.json
+
+RUN npm install
+
+EXPOSE 3000
+CMD ["npm", "start"]
+
