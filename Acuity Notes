@@ -220,29 +220,26 @@ AQIC5wM2LY4SfcwUZj91C-6W25w9aFRbgWAmfJ5jU34dDEc.*AAJTSQACMDEAAlNLABMyMDg4NTg5OTM
 WTS Test users
 DOD
 username: TEST_DOD_User 
-password: Hur4BmjPu6mv+cXK
+password: 
 kavita.puvenna@reisystems.com
 
 NASA
 username: TEST_NASA_User
-password: n9zrd7uW*aSC35JE
+password:  
 vshanmugam@acuitys.com
 
 NASA Headquarters
 username: TEST_Public_User
-password: zjSYgBFLuZ,6XEeT
+password: 
 Melissa.Hughes@gsa.gov
 
 TEST_Sys_Admin
-G$A##test123
-
+  
 <iframe name="viewport" ng-src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC" class="no-frame" height="500" src="http://54.197.196.14:8080/MicroStrategy/servlet/mstrWeb?server=54.197.196.14&amp;project=SAM+Prototype&amp;evt=4001&amp;uid=TEST_NASA_User&amp;pwd=NASA&amp;reportID=53E995F94C4DBCC6BE90DEBE0766C5AC"></iframe>
 
 TICKET NUMBER:INC1722792
 DATE OPENED: 2016-10-26 12:45:10 PM EDT
 DESCRIPTION: CSP portal
-
-
 
 BSP MSTR Iserver/10.11.34.63
 BSP MSTR Web/10.11.34.63:8080
@@ -251,8 +248,8 @@ AWS MSTR Web/54.197.196.14:8080
 MSTR IServer/52.203.16.25
 SVN/https://acuityvm04.acuitys.com:6443/svn/IAE-FPDS
 OWA/https://mail.acuitys.com/owa
-CSP/venkatesanshanmugam/P@
-BT/VenkatesanShanmugam/*FE*
+CSP/venkatesanshanmugam/
+BT/VenkatesanShanmugam/
 https://beta.fpdsng.com/common/jsp/FPDS.jsp/acuity email/*
-Unanet/vshanmugam/*
-MSTR Knowledge Base/acuity email / &
+Unanet/vshanmugam/
+MSTR Knowledge Base/acuity email /
