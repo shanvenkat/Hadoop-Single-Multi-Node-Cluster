@@ -199,3 +199,6 @@ bin/hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar pi 2
 # Command to test my Local JAR File with big text file
 bin/hadoop jar /home/ubu/Downloads/wordCount.jar venkatbigfiletest venkatbigfileo
 bin/hadoop jar /home/ubu/Downloads/wordCount.jar tstlogs tstlogs0
+# Basic Commands for ubu
+sudo reboot
+exit ()
