@@ -51,8 +51,13 @@ https://www.cs.colostate.edu/helpdocs/vi.html
 vi commands
 
 https://www.youtube.com/watch?v=TSpXn1rWlM8
-sudo usermod -s -G vboxsf ubu - to add user # ubu to vboxsf group
-groups ubu - list all groups
+http://tomordonez.com/windows-10-to-ubuntu-virtualbox-shared-folder/
+# Run the virtual box installations first
+$ sudo apt-get install virtualbox-guest-additions-iso
+# ubu to vboxsf group
+sudo usermod -a -G vboxsf ubu - to add user
+# list all groups
+groups ubu 
 
 http://gsaiae.confluence.micropaas.io:8090/display/ALL/Available+Environment+variables+for+services
 local plugin location #C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\MicroStrategy\plugins
