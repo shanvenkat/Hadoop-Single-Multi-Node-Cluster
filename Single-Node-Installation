@@ -1,4 +1,4 @@
-# Required Items VirtualBox, Ubuntu dekstop amd64 ISO Image File, JDK 1.7, Hadoop Tar file, Browser, VI Commands Info
+# Required Items VirtualBox, Ubuntu 14.04, 16.04 dekstop amd64 ISO Image File, JDK 1.7/1.8, Hadoop Tar file 2.6.5, Browser, Inbuild VI Commands Info
 # Install prerequisites and check them
 sudo apt-get update
 # Install JDK
@@ -27,7 +27,7 @@ ssh localhost
 wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.5/hadoop-2.6.5.tar.gz
 
 # Untar tar file, remember untar happens in your home folder /home/hduser/hadoop-2.6.0
-tar xvzf hadoop-2.6.0.tar.gz
+tar xvzf hadoop-2.6.5.tar.gz
 # add hduser to sudo to do move command, to do this login with ubu account 
 su ubu
 # this command run with ubu user account, check left side ubu@ubu-virtualbox
@@ -37,13 +37,13 @@ sudo su hduser
 # make a new directory to do move cmd /usr/local/hadoop with sudo cmd
 sudo mkdir /usr/local/hadoop
 # move folder and other items to newly created /usr/local/hadoop,  - this is our hadoop installation folder from now on.
-cd hadoop-2.6.0
+cd hadoop-2.6.5
 # make sure you are in /home/hduser/hadoop-2.6.0 before running mv command
-cd hadoop-2.6.0
+cd hadoop-2.6.5
 ls -lt (check and see if you have the list of component folders
 sudo mv * /usr/local/hadoop
-# check /home/hduser/hadoop-2.6.0 is empty to confirm now untar software items were moved to new folder /usr/local/hadoop (by running ls -lt)
-# check to see, if /home/ubu/hadoop-2.6.0 folder is empty. all th subfolder components moved to new location /usr/local/hadoop
+# check /home/hduser/hadoop-2.6.5 is empty to confirm now untar software items were moved to new folder /usr/local/hadoop (by running ls -lt)
+# check to see, if /home/ubu/hadoop-2.6.5 folder is empty by running command ls-lt. all th subfolder components moved to new location /usr/local/hadoop
 # Give Write Permission to newly created Directory 
 sudo chown -R hduser:hadoop /usr/local/hadoop
 # Setup config files
@@ -56,15 +56,15 @@ update-alternatives --config java
 /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 
 # Do the following config file changes with User account "hduser", so pls keep check the login account name on Left side
-# Append following in ~/.bashrc file, 
+# Append following in ~/.bashrc file, make sure no space in left side and right side of the variables 
 #open the vi commands, if you have question to write
 vi ~/.bashrc
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 (for latest)
 
 #HADOOP VARIABLES START
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-export HADOOP_INSTALL= /usr/local/hadoop
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_INSTALL=/usr/local/hadoop
 export PATH=$PATH:$HADOOP_INSTALL/bin
 export PATH=$PATH:$HADOOP_INSTALL/sbin
 export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
@@ -171,7 +171,7 @@ hduser@laptop:/usr/local/hadoop/sbin$ jps
 netstat -plten | grep java
 # stopping hadoop
 cd /usr/local/hadoop/sbin
-stop-dfs.sh or stop-all.sh
+stop-dfs.sh stop-yarn.sh or stop-all.sh
 
 # Check web UI NameNode, SecondaryNameNode
 http://localhost:50070/
