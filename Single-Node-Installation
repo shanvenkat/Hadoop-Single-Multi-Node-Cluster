@@ -38,7 +38,7 @@ sudo su hduser
 sudo mkdir /usr/local/hadoop
 # move folder and other items to newly created /usr/local/hadoop,  - this is our hadoop installation folder from now on.
 cd hadoop-2.6.5
-# make sure you are in /home/hduser/hadoop-2.6.0 before running mv command
+# make sure you are in /home/hduser/hadoop-2.6.5 before running mv command
 cd hadoop-2.6.5
 ls -lt (check and see if you have the list of component folders
 sudo mv * /usr/local/hadoop
@@ -47,7 +47,7 @@ sudo mv * /usr/local/hadoop
 # Give Write Permission to newly created Directory 
 sudo chown -R hduser:hadoop /usr/local/hadoop
 # Setup config files
-update-alternatives --config java
+#update-alternatives --config java
 
 /.bashrc
 /usr/local/hadoop/etc/hadoop/hadoop-env.sh
@@ -60,7 +60,7 @@ update-alternatives --config java
 #open the vi commands, if you have question to write
 vi ~/.bashrc
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 (for latest)
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 #HADOOP VARIABLES START
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -74,6 +74,7 @@ export YARN_HOME=$HADOOP_INSTALL
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_INSTALL/lib/native
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_INSTALL/lib"
 #HADOOP VARIABLES END
+
 # run the source command to reflect the change, check by running echo $JAVA_HOME, echo $HADOOP_INSTALL, echo $PATH
 source ~/.bashrc
 #test by running echo cmd
@@ -91,6 +92,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 (make sure no space between J
 # make dir /app/hadoop/tmp , this is required hadoop startup will overwrite some default settings
 sudo mkdir -p /app/hadoop/tmp
 sudo chown hduser:hadoop /app/hadoop/tmp
+
 # add following in core-site.xml
 vi /usr/local/hadoop/etc/hadoop/core-site.xml
 <configuration>
