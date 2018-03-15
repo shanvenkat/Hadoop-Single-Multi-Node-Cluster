@@ -24,7 +24,8 @@ ssh localhost
 
 # REBOOT the machine to reflect the changes
 # Install hadoop from internet using wget cmd
-wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz
+wget http://mirrors.sonic.net/apache/hadoop/common/hadoop-2.6.5/hadoop-2.6.5.tar.gz
+
 # Untar tar file, remember untar happens in your home folder /home/hduser/hadoop-2.6.0
 tar xvzf hadoop-2.6.0.tar.gz
 # add hduser to sudo to do move command, to do this login with ubu account 
