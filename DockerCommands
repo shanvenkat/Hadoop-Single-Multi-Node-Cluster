@@ -11,7 +11,7 @@ docker ps - show running containers on the system
 docker ps -a show all containers on the system
 docker ps -l return the details of last container
 cat Dockerfile ( read Dockerfile)
-docker build -t docker-whale (build a image using new Dockerfile in current Directory with new name docker-whale)
+docker build -t docker-whale .(build a image using new Dockerfile in current Directory(space and period) with new name docker-whale)
 docker images (run current images)
 docker stop ID (container name or ID)
 docker start ID , ''
