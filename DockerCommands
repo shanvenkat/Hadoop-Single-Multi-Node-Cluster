@@ -1,5 +1,7 @@
 https://docs.docker.com/engine/tutorials/dockerimages/
 
+//Add ubuntu user to docker group, if you persmission issue to run the docker commands
+sudo usermod -a -G docker ubu (ubu is an user in ubuntu OS, After running the command do reboot by "sudo reboot")
 A great nation is any mob of people, which proudce at least one honest human a century
 uanme, uname -a, uname -r (linux kernel should be more than 3.11 to run Docker Engine, run uname command inside new container)
 docker version (docker version)
