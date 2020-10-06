@@ -31,12 +31,12 @@ ssh -i kpair.pem ec2-user@ec2-54-179-165-59.ap-southeast-1.compute.amazonaws.com
 aws ec2 describe-instance-status --instance-id i-5203422c
 
 # start/stop EC2
-ec2-start-instances i-511990b8 -O AKIAJEUXT5FFPPPMXFRA -W UdAnWFbZv/bwBCYx1bs6/56VpezFZUYEB6Ogwxsu
-ec2-stop-instances i-511990b8 -O AKIAJEUXT5FFPPPMXFRA -W UdAnWFbZv/bwBCYx1bs6/56VpezFZUYEB6Ogwxsu
+ec2-start-instances 
+ec2-stop-instances 
 
 aws ec2 get-console-output --instance-id i-511990b8
 ec2-version
-ec2-reboot-instances i-511990b8 -O AKIAJEUXT5FFPPPMXFRA -W UdAnWFbZv/bwBCYx1bs6/56VpezFZUYEB6Ogwxsu
+ec2-reboot-instances i-511990b8 -O 
 s3://aws-logs-278696327220-us-east-1/elasticmapreduce/
 
 # Launch EC2 Instance using AWS CLI Commands, Run the following with user account # ubu, because AWS CLI installed with ubu account
